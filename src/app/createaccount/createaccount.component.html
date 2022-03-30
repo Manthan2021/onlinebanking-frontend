@@ -283,7 +283,7 @@
           </ul>
         </div>
         <div class="d-flex flex-column">
-          <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+          <form  [formGroup]="RegisterForm" (ngSubmit)="onSubmit()" ngNativeValidate>
             <div class="form-group">
               <div class="form-group ">
                 <div class="form-group container">
@@ -318,7 +318,7 @@
                     <div class="col-6">
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="text" formControlName="email" [(ngModel)]="customer.email" class="form-control"
+                        <input type="text" formControlName="email" [(ngModel)]="customer.email" class="form-control w-75"
                           [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Enter Email Address" />
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                           <div *ngIf="f.email.errors.required">Email is required</div>
@@ -468,7 +468,9 @@
               </div>
             </div>
           </form>
-
+          <div class="form-group text-center" *ngIf="submitted">
+            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" routerLink="/login">Login Now</button>
+          </div>
         </div>
       </div>
     </div>

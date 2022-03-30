@@ -1,8 +1,7 @@
-<!--  -->
-<div class="container d-flex justify-content-between">
+<div class="container d-flex justify-content-around">
 
   <div>
-    <h3>Your Account Balance Is: {{ txns.balance | currency:"INR"}}</h3>
+    <h3>Cr. Balance: <u> {{ txns.balance | currency:"INR"}} </u></h3>
   </div>
   <div>
     <button class="btn btn-outline-secondary p-2 mx-4 fw-bold" (click)="showAll()">Show Passbook</button>
@@ -58,7 +57,13 @@
       </ul>
     </div>
 
+   
+
+
     <div class="container panel-body">
+      <button printSectionId="print-me" ngxPrint>Print</button>
+      <div id="print-me">
+      
       <table class="table table-striped text-center">
         <thead>
           <tr>
@@ -85,4 +90,5 @@
       </table>
     </div>
   </div>
+</div>
 </div>

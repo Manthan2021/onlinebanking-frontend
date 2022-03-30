@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { NgxPrintModule } from 'ngx-print';
 
 import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,10 @@ import { SendmoneyComponent } from './sendmoney/sendmoney.component';
 import { AdminTxnComponent } from './admin-txn/admin-txn.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { AdminSendComponent } from './admin-send/admin-send.component';
+import { AdminWithdrawComponent } from './admin-withdraw/admin-withdraw.component';
+import { AdminDahboardComponent } from './admin-dahboard/admin-dahboard.component';
+import { CheckBalanceComponent } from './check-balance/check-balance.component';
 
 
 
@@ -32,7 +36,11 @@ import { ContactusComponent } from './contactus/contactus.component';
     SendmoneyComponent,
     AdminTxnComponent,
     AboutusComponent,
-    ContactusComponent
+    ContactusComponent,
+    AdminSendComponent,
+    AdminWithdrawComponent,
+    AdminDahboardComponent,
+    CheckBalanceComponent
     
   ],
   imports: [
@@ -40,7 +48,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    NgxPrintModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
   providers: [],
   bootstrap: [AppComponent]
